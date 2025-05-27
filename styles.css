@@ -26,18 +26,35 @@ header p {
   color: #0a0620;
 }
 
+.contact {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+#bruh {
+    width: 20px;
+    height: 20px;
+}
+
 .section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
+/* EDUCATION CONTAINER */
 .edu {
-  
+  transition: transform 0.3s ease;
   padding: 40px;
   box-shadow: 0 4px 8px 0 rgba(47, 46, 48, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 700px;
   border-radius: 10px;
 }
+.edu:hover {
+ transform: scale(1.02);
+}
+/* END EDUCATION CONTAINER */
+
 
 .pics {
  float:right;
@@ -60,6 +77,8 @@ header p {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #c1c1c7f5;
+  border-radius: 30px;
 }
 
 .projects {
@@ -69,13 +88,24 @@ header p {
   scroll-behavior: smooth;
 }
 
+
 .card {
   flex: 0 0 100%;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 1rem;
   margin: 0 auto;
-  text-align: center;
+
+}
+
+.simvideo {
+    float: right;
+    height: 350px;
+}
+
+.pcard {
+  padding-top: 60px;
+
 }
 
 .scroll-btn {
@@ -105,7 +135,7 @@ a {
   text-decoration: none;
 }
 
-/* BUTTON */
+/* EXPLORE BUTTON */
 
 .button {
   line-height: 1;
@@ -162,8 +192,37 @@ a {
   transition: transform 0.3s ease-in-out 0.1s;
   transform: translate(0);
 }
-/* END OF BUTTON */
+/* END OF EXPLORE BUTTON */
 
-/*video simulation */
+/* NAVIGATION BAR BUTTONS */
+.navbar {
+    border: 1.6px solid rgb(46, 46, 48);
+    border-radius: 20px;
+    width: 300px;
+    height: 45px;
+}
 
-/*end video simulation*/
+.navButtons {
+ background-color: #fff;
+ border: none;
+ transition: color 0.3s ease-in;
+ color: rgb(120, 129, 122);
+ padding: 14px;
+ padding-bottom: 11px;
+
+
+}
+
+.navButtons:hover {
+ color: black;
+}
+
+.curnavButton {
+ background-color: #fff;
+ border: transparent;
+ padding: 14px;
+ padding-bottom: 11px;
+
+
+}
+/* END NAVIGATION BAR BUTTONS */

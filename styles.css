@@ -49,6 +49,8 @@ header p {
   box-shadow: 0 4px 8px 0 rgba(47, 46, 48, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 700px;
   border-radius: 10px;
+  max-width: 700px;
+  margin-left: calc((100% - 1380px) / 2);
 }
 .edu:hover {
  transform: scale(1.02);

@@ -52,6 +52,7 @@ header p {
   max-width: 700px;
   margin-left: calc((100% - 1380px) / 2);
 }
+
 .edu:hover {
  transform: scale(1.02);
 }
@@ -103,6 +104,10 @@ header p {
 .simvideo {
     float: right;
     height: 350px;
+}
+
+.project-model {
+float:right;
 }
 
 .pcard {
@@ -202,6 +207,8 @@ a {
     border-radius: 20px;
     width: 300px;
     height: 45px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .navButtons {
@@ -209,22 +216,24 @@ a {
  border: none;
  transition: color 0.3s ease-in;
  color: rgb(120, 129, 122);
- padding: 14px;
- padding-bottom: 11px;
-
+ padding-top: 10px;
+ text-decoration: none;     /* Removes underline */
+ cursor: pointer;
 
 }
 
 .navButtons:hover {
  color: black;
+ cursor: pointer;
 }
 
 .curnavButton {
  background-color: #fff;
  border: transparent;
- padding: 14px;
- padding-bottom: 11px;
-
+ padding-top: 10px;
+ color: #0a0620;
+ text-decoration: none;     /* Removes underline */
 
 }
 /* END NAVIGATION BAR BUTTONS */
+

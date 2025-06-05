@@ -4,17 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kheireddine Ghettas</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="home.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+
+
+
  <!-- CONTACT BUTTONS-->
 <center><div class = "navbar">
 
-<button class = "curnavButton">Home</button>
-<button class = "navButtons">About</button>
-<button class = "navButtons">Contact</button>
+<a class = "curnavButton">Home</button>
+<a class = "navButtons">About</a></button>
+<a class = "navButtons" href = "contact.html" target="_self">Contact</a>
 
 </div></center></br>
 
@@ -82,8 +85,22 @@
 
 <!-- container 2-->
         <div class="card">
+                    <!-- MODEL -->
+  <!-- Load model-viewer from CDN -->
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<model-viewer class = "project-model" src="models/dispensingass.glb"
+              alt="My 3D Model"
+              auto-rotate
+              camera-controls
+              style="width: 600px; height: 400px;">
+</model-viewer>
+<!-- MODEL END -->
           <h3>Automated Pre-Treatment Water System</h3></br>
           <p class = "pcard">Feasibility analysis to address turbidity spikes in Nunavut. Designed and tested in harsh environments.</p></br>
+
+
+
  <!--Button copied-->
         <button onclick="window.location.href='https://queensuca-my.sharepoint.com/:w:/g/personal/23hr42_queensu_ca/ESkVFxpXLCxOiQn23M7PU8EBlkPG-sENsei8HFD9XpBqWw?e=c6bQni';" class="button" style="--clr: #7808d0">
           <span class="button__icon-wrapper">

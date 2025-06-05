@@ -6,6 +6,7 @@ function scrollProjects(direction) {
 
   if (cards.length === 0) return;
 
+  
   currentIndex += direction;
   if (currentIndex < 0) currentIndex = 0;
   if (currentIndex >= cards.length) currentIndex = cards.length - 1;

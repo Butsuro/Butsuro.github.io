@@ -10,12 +10,14 @@
 <body>
 
 
+
+
  <!-- CONTACT BUTTONS-->
 <center><div class = "navbar">
 
 <a class = "curnavButton">Home</button>
-<a class = "navButtons" href = "about.html" target="_self">About</a></button>
-<a class = "navButtons" >Contact</a>
+<a class = "navButtons" href="assets/Resume 62825.pdf" download class="resume-btn">Resume</a></button>
+<a class = "navButtons"  href = "contact.html" target="_self" >Contact</a>
 
 </div></center></br>
 
@@ -31,13 +33,18 @@
   <section class="section">
     <center><h2>Projects</h2></center>
     <div class="projects-wrapper">
-      <button class="scroll-btn left" onclick="scrollProjects(-1)">&#10094;</button>
+      <!--left button-->
+      <button class="scroll-btn left" onclick="scrollProjects(-1)">
+  <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path d="M15 19l-7-7 7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
       <div class="projects" id="projects">
 
 
 <!-- container 1-->
         <div class="card">
-                    <video class = "simvideo" autoplay muted loop playsinline width="600" height="400">
+        <video class = "simvideo" autoplay muted loop playsinline width="600" height="400">
            <source src="/assets/simvid.mp4" type="video/mp4">
         </video>
 
@@ -137,12 +144,48 @@
 <!-- container 3-->
         <div class="card">
           <h3>Dubai Municipality</h3></br>
-          <p class = "pcard">E-commerce platform with Stripe integration and full checkout flow.</p>
-          <a href="#">View Project</a>
+          <p class = "pcard">3 Month internship making traffic diversion drawings for multiple projects across Dubai</p></br>
+          <!--Button copied-->
+        <button onclick="window.location.href='https://queensuca-my.sharepoint.com/:w:/g/personal/23hr42_queensu_ca/ESkVFxpXLCxOiQn23M7PU8EBlkPG-sENsei8HFD9XpBqWw?e=c6bQni';" class="button" style="--clr: #7808d0">
+          <span class="button__icon-wrapper">
+            <svg
+              viewBox="0 0 14 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="button__icon-svg"
+              width="10"
+            >
+              <path
+                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                fill="currentColor"
+              ></path>
+            </svg>
+
+            <svg
+              viewBox="0 0 14 15"
+              fill="none"
+              width="10"
+              xmlns="http://www.w3.org/2000/svg"
+              class="button__icon-svg button__icon-svg--copy"
+            >
+              <path
+                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </span>
+          Explore 
+        </button> 
+        <!-- end of Button copied-->
         </div>
 
       </div>
-      <button class="scroll-btn right" onclick="scrollProjects(1)">&#10095;</button>
+      <!-- Right Button -->
+<button class="scroll-btn right" onclick="scrollProjects(1)">
+  <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
     </div>
   </section>
 

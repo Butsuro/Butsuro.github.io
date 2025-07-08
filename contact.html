@@ -12,9 +12,9 @@
  <!-- CONTACT BUTTONS-->
 <center><div class = "navbar">
 
-<a class = "navButtons" href = "home.html" target="_self">Home</a>
-<a class = "curnavButton" href="assets/Resume 62825.pdf" download class="resume-btn">Resume</a>
-<a class = "navButtons" href = "contact.html" target="_self">Contact</a>
+<a class = "navButtons" href = "index.html" target="_self">Home</a>
+<a class = "navButtons" href="assets/Resume 62825.pdf" download class="resume-btn">Resume</a>
+<a class = "curnavButton" href = "contact.html" target="_self">Contact</a>
 
 </div></center></br>
 
@@ -22,24 +22,58 @@
 
 
   <header>
-    <h1 id="abouth">About</h1>
+    <h1 id="abouth">Contact</h1>
   </header>
 
-<!-- education section-->
-</br></br><div class = "edu">
-  <img class = "pics" src="/assets/queens.png" alt="Queen's University Logo"><br>
-<h1 >Education</h1> 
-</br>
-  <p class = "boxh2">Bachelor of Applied Science, Computer Engineering, 1st Year</p>
-  <p><pre>Queen’s University, Kingston, ON                                                  2024-2025</pre></p></br>
-  <p>Pursuing a BEng. Education in performance in engineering design, computer engineering, software design,
-  projects, and labs starting in Fall of 2024.</p>
-  
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.98/build/spline-viewer.js"></script>
-<spline-viewer url="undefined"></spline-viewer>
-</div>  
+<!-- contact section-->
 
+<div class="contact-box"></div>
+
+<div class="contact-container">
+  <div class="contact-info-text">
+    <h2>Let’s Connect</h2>
+    <p>If you'd like to work together or have any questions, feel free to drop a message!</p>
+    <br><br>
+    <img class="contactimg" src="assets/email.png"><br>
+    <p></p>Email: ghettaskheireddine@gmail.com</p>
+  </div>
+  
+<form action="https://formspree.io/f/mblyvkvk" method="POST" class="contact-form">
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
+</div>
 
   <script src="scripts.js"></script>
 </body>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>Kheireddine Ghettas</h2>
+      <p>Designing digital experiences</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="assets/Resume 62825.pdf" download>Resume</a>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://github.com/yourusername" target=""><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Kheireddine Ghettas. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Font Awesome CDN -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 </html>

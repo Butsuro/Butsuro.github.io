@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kheireddine Ghettas</title>
-  <link rel="stylesheet" href="project1.css" />
+  <link rel="stylesheet" href="home.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -15,66 +15,102 @@
  <!-- CONTACT BUTTONS-->
 <center><div class = "navbar">
 
-<a class = "navButtons" href = "index.html">Home</button>
-<a class = "navButtons" href="assets/Resume 62825.pdf" download class="resume-btn">Resume</a></button>
-<a class = "navButtons"  href = "contact.html" target="_self" >Contact</a>
+<a class = "curnavButton">Home</button>
+<a class = "navButtons" href="your-resume.pdf" download class="resume-btn">Resume</a></button>
+<a class = "navButtons" href = "contact.html" target="_self">Contact</a>
 
-</div></center><br>
+</div></center></br>
 
  <!-- END CONTACT BUTTONS-->
- <header>
+
+
+  <header>
     <h1>Foxes & Coyotes Simulation</h1>
   </header>
-  <br>
+<section id="fox-coyote-project" class="project-section">
+  <div class="project-title">
+    <h2>🦊 Project Overview</h2>
+    <p>
+      Collaborated with Sandy Pines Wildlife Centre to design a humane, simulation-based method
+      for capturing rehabilitated foxes and coyotes. Our solution replaced manual netting with a
+      behavioral model that reduced stress on animals and improved staff safety.
+    </p>
+    <img src="assets/foxproject1.avif" alt="Overview image" class="project-image" />
+  </div>
 
-    
-    <center>
-    <div class="projectinfo">
-        <h2 class="beforeinfoh2">PROBLEM & GOALS​</h2>
-        <div class="image-container">
-            <img src="/assets/coolfox.png" class="projectinfo-img" alt="Fox Image">
-            <div class="img-text">✧ KHEIREDDINE</div>
-        </div>
-       <div class="projectinfo2">
-       <br><h2 class="projectinfo-h1">Sandy Pines Wildlife Centre Struggles to:​</h2>
-        <br>
-        <ul class="projectinfo-bp"> 
-            <li>Locate potential canid locations​.</li><br>
-            <li>Capture rehabilitated canids.</li>
-        </ul>
-        <br><h2 class="projectinfo-h1">Computer Simulation Goals:</h2>
-        <br>
-        <ul class="projectinfo-bp"> 
-            <li>Models animal behaviour.​​</li><br>
-            <li>Optimizes trap placement.</li>
-        </ul>
-        </div>
-    </div>
-    <!--Upside down triangle -->
-
-<div class="info-section-wrapper">
-  <div class="triangle-down"></div>
-
-  <div class="infocard-container">
-    <div class="infocard">
-      <h2 class="infocard-h1">Requirements:</h2><br><br>
-      <ul class="infocard-bp">
-        <li>Within the <span class="highlight">$10,000</span> implementation budget.</li><br><br>
-        <li>Adapt to pre-existing structures in the environment.</li>
-      </ul>
-    </div>
-
-    <div class="infocard">
-      <h2 class="infocard-h1">Success Criteria:</h2><br><br>
-      <ul class="infocard-bp">
-        <li><span class="highlight">80%</span> successful when applied to real-life scenarios</li><br>
-        <li><span class="highlight">80%</span> approval rate when used by Sandy Pines Staff</li><br>
-        <li>Changes trap location recommendation based on different inputs</li>
-      </ul>
+  <div class="project-block row">
+    <img src="assets/foxproject2.avif" alt="Simulation">
+    <div class="project-block-content">
+      <h3>🧠 Agent-Based Simulation</h3>
+      <p>
+        Developed in Python using Mesa, NumPy, and Pygame, the simulation mimicked natural
+        animal behavior through agent-based modeling. Each virtual fox or coyote had its own
+        behavior logic, allowing us to identify optimal trap locations over time.
+      </p>
     </div>
   </div>
+
+<div class="project-block row">
+  <!-- TEXT CONTENT -->
+  <div class="project-block-content" style="flex: 1; padding-right: 30px;">
+    <h3>🖥️ Interactive Front-End</h3>
+    <p>
+      Designed a user interface that allowed staff to input variables like species, family size,
+      and enclosure type. Heatmaps and trap placement overlays helped visualize high-traffic
+      areas and predict capture success.
+    </p>
+  </div>
+
+  <!-- IMAGE SLIDER -->
+  <div class="custom-slider-wrapper">
+    <button class="custom-slider-btn left" onclick="scrollCustomSlider(-1)">
+      <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M15 19l-7-7 7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <div class="custom-slider" id="customSlider">
+      <img src="assets/frontend2.png" class="custom-slide" alt="Slide 1" />
+      <img src="assets/frontend3.png" class="custom-slide" alt="Slide 2" />
+      <img src="assets/frontend4.png" class="custom-slide" alt="Slide 3" />
+    </div>
+
+    <button class="custom-slider-btn right" onclick="scrollCustomSlider(1)">
+      <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
 </div>
+
+  <div class="project-block row">
+    <img src="assets/foxproject4.avif" alt="Technical">
+    <div class="project-block-content">
+      <h3>📊 Technical Breakdown</h3>
+      <p>
+        Modeled real enclosures using layered 3D arrays populated from AutoCAD and Google Maps.
+        Simulated terrain, dens, food sources, and movement patterns. Used animal-specific cycles
+        to replicate daily behaviors and assess trap timing.
+      </p>
+    </div>
+  </div>
+
+  <div class="project-block row-reverse">
+    <img src="assets/foxproject5.avif" alt="Impact">
+    <div class="project-block-content">
+      <h3>💡 Real-World Impact</h3>
+      <p>
+        Delivered a scalable and ethical wildlife management tool that enhances capture efficiency
+        while prioritizing animal welfare. The simulation system is adaptable to future use across
+        different rehabilitation centers.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<script src="projectscroll.js"></script>
+
     
-    </center>
 </body>
 </html>

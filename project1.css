@@ -423,3 +423,86 @@ header p {
 
 
 /*end*/
+
+
+ /* === RESPONSIVE MEDIA QUERIES === */
+
+  /* Small devices (phones) */
+  @media (max-width: 768px) {
+    body {
+      padding: 1rem;
+    }
+
+    .navbar {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .beforeinfoh2 {
+      font-size: 28px;
+      position: static;
+      background: none;
+      -webkit-text-fill-color: initial;
+      text-align: center;
+    }
+
+    .projectinfo-img {
+      width: 100%;
+      height: auto;
+      float: none;
+      margin-bottom: 20px;
+    }
+
+    .projectinfo2 {
+      position: static;
+      width: 100%;
+      height: auto;
+    }
+
+    .projectinfo {
+      padding: 20px;
+    }
+
+    .infocard-container {
+      flex-direction: column;
+      gap: 30px;
+      top: 0;
+      position: static;
+      transform: none;
+    }
+
+    .infocard {
+      width: 100%;
+      height: auto;
+    }
+
+    .triangle-down {
+      display: none;
+    }
+
+    .video-hero {
+      height: 60vh;
+    }
+
+    .video-content h1 {
+      font-size: 2rem;
+    }
+
+    .video-content p {
+      font-size: 1rem;
+    }
+
+    .hero-btn {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  }

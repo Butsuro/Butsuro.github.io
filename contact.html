@@ -38,11 +38,16 @@
     <p></p>Email: ghettaskheireddine@gmail.com</p>
   </div>
   
-<form action="https://formspree.io/f/mblyvkvk" method="POST" class="contact-form">
+<form id="contact-form" class="contact-form">
   <input type="email" name="email" placeholder="Your Email" required />
   <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
   <button type="submit">Send Message</button>
 </form>
+
+<!-- Success message container -->
+<div id="form-success" style="display:none; color:green; margin-top:20px;">
+  ✅ Your message was sent successfully!
+</div>
 
 </div>
 

@@ -16,5 +16,3 @@ function scrollProjects(direction) {
     behavior: 'smooth'
   });
 }
-
-

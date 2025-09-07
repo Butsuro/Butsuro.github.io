@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kheireddine Ghettas</title>
+  <link rel="stylesheet" href="project3.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+
+ <!-- CONTACT BUTTONS-->
+<center><div class="navbar">
+  <a class="navButtons" href="index.html">Home</a>
+  <a class="navButtons" href="assets/Resume 62825.pdf" download>Resume</a>
+  <a class="navButtons" href="contact.html" target="_self">Contact</a>
+</div>
+<br>
+</center>
+
+ <!-- END CONTACT BUTTONS-->  
+
+      <section class="video-hero">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="assets/project3vid.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="video-overlay"></div>
+
+  <div class="video-content">
+    <h1>Example Traffic Diversion</h1>
+    <p>Draughting • Planning </p>
+    <a href="https://youtu.be/GhT3hRddMOw" class="hero-btn">View My Work</a>
+  </div>
+</section>
+
+<br><br><br><br><br><br><br>
+
+<!--Project Description-->
+
+<div class="description">
+<img class="logos" src="/assets/dubaim.png" style="width: 400px;">
+
+<h2 class="dh2">I spent the summer of my first year in computer engineering as a draughtsman planning traffic<br>
+     diversions for Dubai Municipality projects.</h2><br>
+
+<p class="role">MY ROLE</p>
+<br>
+<p class="roleText">Planned and implemented traffic diversion schemes to support construction activities while ensuring safety<br> and accessibility for road users, pedestrians, and nearby properties.</p>
+</div>
+<!-- End of Project Description-->
+
+<!-- Drawing Image with figure text-->
+
+<center>
+    <img src="/assets/drawing.png" style="width: 1000px; border-radius: 40px;"><br>
+    <p class="roleText">Example Drawing From Demo</p>
+</center>
+
+<div class="applicationD">
+
+<h3 class="cardh3">Application</h3></br>
+
+<div class="top-row">
+  <div class="img-container">
+    <img src="/assets/img1.jpeg" id="img1" alt="">
+    <div class="overlay">Local Traffic Diversion</div>
+  </div>
+
+  <div class="img-container">
+    <img src="/assets/img2.jpeg" id="img2" alt="">
+    <div class="overlay">Service Road</div>
+  </div>
+
+  <div class="img-container">
+    <img src="/assets/img3.jpeg" id="img3" alt="">
+    <div class="overlay">Service Road</div>
+  </div>
+</div>
+
+  <center><div class="img-container" id="c5">
+    <img src="/assets/img5.jpeg" id="img5" alt="">
+    <div class="overlay">Highway Merging</div>
+  </div></center>
+</div>
+
+<div class="results">
+    <h3 class="cardh4">RESULTS</h3>
+
+ <div class="stats-box">
+  <div class="stat">
+    <h2><span class="count" data-target="10">0</span><span class="suffix"> +</span></h2><br>
+    <p>Completed Projects</p>
+  </div>
+  <div class="stat">
+    <h2><span class="count" data-target="90">0</span><span class="suffix"> %</span></h2><br>
+    <p>Of Traffic Flow Preserved</p>
+  </div>
+  <div class="stat">
+    <h2><span class="count" data-target="24">0</span><span class="suffix"> hr</span></h2><br>
+    <p>Access Maintained</p>
+  </div>
+</div>
+
+<script>
+    // count-up animation with IntersectionObserver
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".count");
+  let started = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !started) {
+        started = true;
+        counters.forEach(counter => {
+          const target = +counter.getAttribute("data-target");
+          let current = 0;
+          const increment = target / 200; // speed factor
+          const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+              counter.textContent = Math.floor(current);
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.textContent = target;
+              counter.classList.add("glow"); // add glow when done
+            }
+          };
+          updateCounter();
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(document.querySelector(".stats-box"));
+});
+
+</script>
+</div>
+
+
+<!-- End of Drawing Image with figure text-->
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>Kheireddine Ghettas</h2>
+      <p>Designing digital experiences</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="assets/Resume 62825.pdf" download>Resume</a>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://github.com/yourusername" target=""><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Kheireddine Ghettas. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Font Awesome CDN -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</html>

@@ -505,3 +505,75 @@ header p {
       gap: 20px;
     }
   }
+
+  /* === CURSOR EFFECT ===*/
+
+/* Hide system cursor everywhere */
+    html, body, a, button, input, textarea, select, label, div, span {
+      cursor: none !important;
+    }
+
+
+    .clickable {
+      padding: 16px 36px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border: none;
+      background: #fff;
+      color: #000;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .clickable.dark {
+      background: #222;
+      color: #fff;
+    }
+
+    .clickable:hover {
+      transform: translateY(-2px);
+    }
+
+    /* --- Custom Cursor --- */
+
+    .cursor-dot, .cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: difference;
+      z-index: 9999;
+    }
+
+    /* Inner dot */
+    .cursor-dot {
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+    }
+
+    /* Outer ring */
+    .cursor-ring {
+      width: 36px;
+      height: 36px;
+      border: 2px solid white;
+      border-radius: 50%;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* Hover state */
+    .cursor-dot.hover {
+      transform: translate(-50%, -50%) scale(1.5);
+    }
+
+    .cursor-ring.hover {
+      transform: translate(-50%, -50%) scale(2.2);
+      border-color: cyan;
+      box-shadow: 0 0 15px rgba(0,255,255,0.4);
+    }
+
+    /* === CURSOR EFFECT END ===*/

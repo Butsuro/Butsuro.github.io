@@ -164,7 +164,15 @@ header p {
     color: #9e9e9e;
     font-weight: bold;
 }
-
+#img-1{
+  width: 1000px; border-radius: 40px;
+  transform: scale(0.95); /* initial slightly smaller */
+  transition: transform 0.7s ease; /* animate opacity and scale */
+  box-shadow: 0 20px 50px 10px rgba(0, 0, 0, 0.4);
+}
+#img-1:hover {
+  transform: scale(1); /* scale up on hover */
+}
 /* === END Description DIV === */
 
 /* ===  Application  === */
@@ -237,7 +245,8 @@ font-family: "Poppins", "Segoe UI", "Helvetica Neue", sans-serif;
     border-radius: 55px;
     padding: 5px;
     left: 20%;
-}
+   }
+   
 
 /* Overlay */
 .overlay {
@@ -258,9 +267,15 @@ font-family: "Poppins", "Segoe UI", "Helvetica Neue", sans-serif;
   padding: 20px;
 }
 
-/* Hover effect */
+.img-container .overlay {
+  opacity: 0;
+  transform: scale(0.95); /* initial slightly smaller */
+  transition: opacity 0.3s ease, transform 0.7s ease; /* animate opacity and scale */
+}
+
 .img-container:hover .overlay {
   opacity: 1;
+  transform: scale(1); /* scale up on hover */
 }
 
 /* ===  END OF Application  === */
@@ -275,10 +290,11 @@ font-family: "Poppins", "Segoe UI", "Helvetica Neue", sans-serif;
   background: linear-gradient(to left, #cd9d75 10%, #ebbf3a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 60px;
+  font-size: 90px;
   font-weight: 900;
-  line-height: 1.2; /* Better than fixed px value for responsiveness */
-font-family: "Poppins", "Segoe UI", "Helvetica Neue", sans-serif;
+  font-family: "Poppins", "Segoe UI", "Helvetica Neue", sans-serif;
+  padding-top: 10px;
+
 }
 .stats-box {
   display: flex;
@@ -287,7 +303,7 @@ font-family: "Poppins", "Segoe UI", "Helvetica Neue", sans-serif;
   background-color: #ddd;
   padding: 30px;
   border-radius: 20px;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 100px auto; /* so you can scroll to trigger it */
 }
 
@@ -298,7 +314,7 @@ font-family: "Poppins", "Segoe UI", "Helvetica Neue", sans-serif;
 }
 
 .count {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #5b6455;
   transition: text-shadow 0.5s ease;
@@ -555,3 +571,185 @@ font-family: "Poppins", "Segoe UI", "Helvetica Neue", sans-serif;
 
   
 /* === ANIMATIONS ===*/
+
+/* === CURSOR EFFECT ===*/
+
+/* Hide system cursor everywhere */
+    html, body, a, button, input, textarea, select, label, div, span {
+      cursor: none !important;
+    }
+
+
+    .clickable {
+      padding: 16px 36px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border: none;
+      background: #fff;
+      color: #000;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .clickable.dark {
+      background: #222;
+      color: #fff;
+    }
+
+    .clickable:hover {
+      transform: translateY(-2px);
+    }
+
+    /* --- Custom Cursor --- */
+
+    .cursor-dot, .cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: difference;
+      z-index: 9999;
+    }
+
+    /* Inner dot */
+    .cursor-dot {
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+    }
+
+    /* Outer ring */
+    .cursor-ring {
+      width: 36px;
+      height: 36px;
+      border: 2px solid white;
+      border-radius: 50%;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* Hover state */
+    .cursor-dot.hover {
+      transform: translate(-50%, -50%) scale(1.5);
+    }
+
+    .cursor-ring.hover {
+      transform: translate(-50%, -50%) scale(2.2);
+      border-color: cyan;
+      box-shadow: 0 0 15px rgba(0,255,255,0.4);
+    }
+
+    /* === CURSOR EFFECT END ===*/
+
+    /* Small devices: phones & portrait tablets */
+@media (max-width: 768px) {
+
+  /* Reduce padding for description & application */
+  .description {
+      padding: 40px 20px;
+  }
+
+  .applicationD {
+      padding: 40px 20px;
+  }
+
+  /* Scale down project text */
+  .dh2 {
+      font-size: 22px;
+      line-height: 32px;
+  }
+
+  .role, .roleText {
+      font-size: 16px;
+  }
+
+  /* Make top-row images stack vertically if needed */
+  .top-row {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+  }
+
+  /* Images scale to fit screen */
+  #img1, #img2, #img3, #img4, #img5, #img-1 {
+      width: 90%;
+      height: auto;
+      border-radius: 30px;
+  }
+
+  /* Results section */
+  .stats-box {
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+      margin: 50px auto;
+  }
+
+  .count {
+      font-size: 2.2rem;
+  }
+
+  .suffix {
+      font-size: 1.2rem;
+  }
+
+  /* Video hero adjustments */
+  .video-hero {
+      height: 50vh;
+  }
+
+  .video-content h1 {
+      font-size: 2rem;
+  }
+
+  .video-content p {
+      font-size: 1rem;
+  }
+
+  .hero-btn {
+      font-size: 1rem;
+      padding: 10px 18px;
+  }
+
+  /* Navbar stack vertically */
+  .navbar {
+      width: 90%;
+      flex-direction: column;
+      height: auto;
+      gap: 10px;
+      border-radius: 15px;
+  }
+}
+
+/* Extra small devices (phones < 480px) */
+@media (max-width: 480px) {
+  .dh2 {
+      font-size: 20px;
+      line-height: 28px;
+  }
+
+  .cardh3 {
+      font-size: 28px;
+  }
+
+  .cardh4 {
+      font-size: 60px;
+  }
+
+  .logos {
+      width: 80%;
+      padding-bottom: 20px;
+  }
+
+  #img-1 {
+      width: 95%;
+  }
+
+  .overlay {
+      font-size: 1rem;
+      padding: 10px;
+  }
+}

@@ -10,6 +10,10 @@ body {
   color: #0a0620c4;
   padding: 2rem;
 }
+/* Hide system cursor everywhere */
+    html, body, a, button, input, textarea, select, label, div, span {
+      cursor: none !important;
+    }
 
 header {
   text-align: center;
@@ -20,6 +24,115 @@ header h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
 }
+/* === HERO ===*/
+#heroText{
+    font-size: 130px;
+    text-shadow: 2px 2px 0 #919294, 2px -2px 0 #919294, -2px 2px 0 #919294, -2px -2px 0 #919294, 2px 0px 0 #919294, 0px 2px 0 #919294, -2px 0px 0 #919294, 0px -2px 0 #919294;
+    color: #FFFFFF;
+    text-align: right;
+
+}
+#heroSubText{
+    padding: 10px;
+    font-size: 20px;
+    color: #474747;
+    text-align: left;
+}
+/* Ensure hero text is on top */
+#heroText {
+    position: absolute; /* overlay on top */
+    top: 100px; /* adjust vertical position */
+    right: 100px; /* move slightly from left edge */
+    z-index: 2000; /* higher than all scene elements */
+}
+#heroSubText {
+    position: absolute; /* overlay on top */
+    top: 300px; /* adjust vertical position */
+    right: 100px; /* move slightly from left edge */
+    z-index: 2000; /* higher than all scene elements */
+}
+
+/* Optional: make heroSubText appear below heroText */
+#heroSubText {
+    top: 430px; /* or adjust as needed */}
+
+    html, body { height: 100%; }
+
+html { background: linear-gradient(#ffffff, #ffffff); }
+
+canvas {
+  display: block;
+}
+
+#light {
+  background: radial-gradient(30% 60%, circle contain, hsla(41, 100%, 20%, 0.25) 0%, hsla(240, 0%, 0%, 0) 100%);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#ground {
+background: linear-gradient(#102018 20%, rgb(255, 255, 255) );
+  bottom: 0;
+  height: 30%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+#moon {
+  background: linear-gradient(rgb(158, 170, 153), #eef);
+  border-radius: 100%;
+  box-shadow: 0 0 150px hsla(0, 0%, 100%, .3);
+  top: 60%;
+  height: 200px;
+  left: 30%;
+  margin: -100px 0 0 -100px;
+  position: absolute;
+  width: 200px;
+}
+
+#house {
+  background: #000000;
+  bottom: 30%;
+  height: 18px;
+  left: 30%;
+  margin: 0 0 0 -15px;
+  position: absolute;
+  width: 30px;
+}
+
+#house:before {
+  background: #000;
+  top: -15px;
+  content: '';
+  display: block;
+  height: 12px;
+  left: 21px;
+  margin: 0 0 0 0;
+  position: absolute;
+  width: 6px;
+  z-index: 2;
+}
+
+#house:after {
+  border-bottom: 15px solid #000;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  top: -15px;
+  content: '';
+  display: block;
+  height: 0;
+  left: 50%;
+  margin: 0 0 0 -20px;
+	position: absolute;
+  width: 0;
+}
+
+
+/* === HERO END === */
 
 header p {
   font-size: 1.2rem;
@@ -440,17 +553,20 @@ font-family: "Poppins", "Segoe UI", "Helvetica Neue", sans-serif;
 /*end of contact box*/
 
 /*skill card section*/
+/* skill card section */
 .skills-section {
-  padding: 60px 20px;
-  background: #f3f3f3;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8f9fb, #eef2f7);
   text-align: center;
   font-family: 'Inter', sans-serif;
 }
 
 .skills-title {
-  font-size: 2.5rem;
-  color: #222;
-  margin-bottom: 40px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 50px;
+  letter-spacing: -0.5px;
 }
 
 .skills-cards {
@@ -461,42 +577,80 @@ font-family: "Poppins", "Segoe UI", "Helvetica Neue", sans-serif;
 }
 
 .skill-card {
-  background: #fff;
-  border-radius: 20px;
-  width: 280px;
-  height: 250px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  width: 300px;
+  height: 260px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   position: relative;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  cursor: pointer;
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(94,150,116,0.15), rgba(255,255,255,0));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
 }
 
 .skill-card:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-14px) scale(1.04);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
 }
 
 .card-content {
-  padding: 30px 20px;
-  transition: color 0.3s ease;
+  padding: 35px 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.skill-icon {
+  font-size: 48px;
+  margin-bottom: 18px;
+  color: #5e9674;
+  transition: transform 0.4s ease, color 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+  transform: rotate(10deg) scale(1.15);
+  color: #4a7d61;
 }
 
 .skill-card h3 {
-  font-size: 24px;
-  color: #5e9674;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
+  font-size: 22px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .skill-card:hover h3 {
   transform: scale(1.1);
+  color: #2d6a4f;
 }
 
 .skill-card p {
   color: #555;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.6;
+  transition: color 0.3s ease;
 }
+
+.skill-card:hover p {
+  color: #444;
+}
+/* END of skill card section */
+
 /*END of skill card section*/
 
 
@@ -629,3 +783,177 @@ header {
 .site-footer {
   animation-delay: 0.7s;
 }
+
+
+/*Responsiveness mobile*/
+
+
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 2rem !important;
+  }
+
+  header p {
+    font-size: 1rem !important;
+  }
+
+  .navbar {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 10px;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .projects-wrapper {
+    flex-direction: column !important;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  .projects {
+    flex-direction: column !important;
+    gap: 2rem;
+  }
+
+  .card {
+    flex: 1 1 100% !important;
+    padding: 1rem !important;
+    width: 100% !important;
+  }
+
+  .simvideo,
+  .boldia,
+  .model-overlay-wrapper {
+    float: none !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .project-model {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .overlay-text {
+    position: static !important;
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-align: center;
+    background: transparent !important;
+    color: #333 !important;
+  }
+
+  .scroll-btn {
+    display: none !important;
+  }
+
+  .edu {
+    width: 100% !important;
+    height: auto !important;
+    padding: 20px;
+  }
+
+  .pics {
+    float: none !important;
+    display: block !important;
+    margin: 0 auto 10px !important;
+  }
+
+  .skills-cards {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  .skill-card {
+    width: 90% !important;
+  }
+
+  .footer-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .contact-container {
+    flex-direction: column !important;
+  }
+
+  .contact-info-text,
+  .contact-form {
+    width: 100% !important;
+  }
+}
+
+/* === CURSOR EFFECT ===*/
+
+
+    .clickable {
+      padding: 16px 36px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border: none;
+      background: #fff;
+      color: #000;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .clickable.dark {
+      background: #222;
+      color: #fff;
+    }
+
+    .clickable:hover {
+      transform: translateY(-2px);
+    }
+
+    /* --- Custom Cursor --- */
+
+    .cursor-dot, .cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: difference;
+      z-index: 9999;
+    }
+
+    /* Inner dot */
+    .cursor-dot {
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+    }
+
+    /* Outer ring */
+    .cursor-ring {
+      width: 36px;
+      height: 36px;
+      border: 2px solid white;
+      border-radius: 50%;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* Hover state */
+    .cursor-dot.hover {
+      transform: translate(-50%, -50%) scale(1.5);
+    }
+
+    .cursor-ring.hover {
+      transform: translate(-50%, -50%) scale(2.2);
+      border-color: cyan;
+      box-shadow: 0 0 15px rgba(0,255,255,0.4);
+    }
+
+    /* === CURSOR EFFECT END ===*/
+
+
+/* === SKILLS SECTION === */

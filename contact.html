@@ -121,3 +121,46 @@
 
 
 </html>
+
+ <!--cursor effect-->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <script>
+   const dot = document.querySelector(".cursor-dot");
+    const ring = document.querySelector(".cursor-ring");
+
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+
+    // Follow mouse instantly (dot)
+    document.addEventListener("mousemove", e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.top = mouseY + "px";
+      dot.style.left = mouseX + "px";
+    });
+
+    // Smooth trailing (ring)
+    function animate() {
+      ringX += (mouseX - ringX) * 0.15;
+      ringY += (mouseY - ringY) * 0.15;
+      ring.style.top = ringY + "px";
+      ring.style.left = ringX + "px";
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // Hover detection
+    document.addEventListener("mouseover", e => {
+      if (e.target.closest("a, button, .clickable, input, textarea, select, label")) {
+        dot.classList.add("hover");
+        ring.classList.add("hover");
+      }
+    });
+    document.addEventListener("mouseout", e => {
+      dot.classList.remove("hover");
+      ring.classList.remove("hover");
+    });
+  </script>
+  <!--cursor effect END-->

@@ -23,96 +23,92 @@
 
  <!-- END CONTACT BUTTONS-->
 
-
+<!-- === HEROO ===-->
   <header>
+<img src="assets/heroAnim.gif" alt="Hero Animation" class="hero-gif">
 
-    <section class="hero">
-    <h1 id="heroText" >KHEIREDDINE<br>GHETTAS</h1>
-    <p id="heroSubText">Upcoming  Engineer | Developer | Problem Solver</p>
+
+   <section class="hero">
+  <h1 id="heroText">Hello<br>I'm <span id="highlightName">Kheireddine</span></h1>
+<p id="heroSubText"></p>
+</section>
+<!-- === HEROO TITLE HIGHLIGHT SCRIPT ===-->
+<script> 
+const highlightName = document.getElementById("highlightName");
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;          // current scroll
+  const maxScroll = 500;                    // scroll distance for full highlight
+  const percent = Math.min(scrollY / maxScroll, 1); // 0 → 1
+
+  // update gradient stops to reveal highlight from left to right
+  const highlightPercent = Math.round(percent * 100); 
+  highlightName.style.background = `linear-gradient(to right, #bdff9e ${highlightPercent}%, #ffffff ${highlightPercent}%)`;
+});
+
+</script>
+<!-- === HEROO SUBTEXT EFFFECT===-->
+<script>
+ const phrases = [
+  "Upcoming Engineer",
+  "Developer",
+  "Problem Solver"
+];
+
+const subText = document.getElementById("heroSubText");
+let phraseIndex = 0;
+let charIndex = 0;
+let typing = true; // true = typing, false = deleting
+
+subText.classList.add("typing");
+
+function typeWriter() {
+  const currentPhrase = phrases[phraseIndex];
+
+  if (typing) {
+    // type next character
+    subText.textContent = currentPhrase.substring(0, charIndex + 1);
+    charIndex++;
+    if (charIndex === currentPhrase.length) {
+      // phrase complete, start deleting after a delay
+      typing = false;
+      setTimeout(typeWriter, 1000); // pause before deleting
+      return;
+    }
+    setTimeout(typeWriter, 150); // typing speed
+  } else {
+    // delete character
+    subText.textContent = currentPhrase.substring(0, charIndex - 1);
+    charIndex--;
+    if (charIndex === 0) {
+      // move to next phrase
+      typing = true;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      setTimeout(typeWriter, 300); // pause before typing next
+      return;
+    }
+    setTimeout(typeWriter, 75); // deleting speed
+  }
+}
+
+// start the effect
+typeWriter();
+
+
+</script>
+<a href="#target-section" class="scroll-button">&#x2193;</a>
+
+<!-- === HEROO ENDD ===-->
+    
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
 
   </header>
-  <canvas id="c"></canvas>
-<div id="light"></div>
-<div id="moon"></div>
-<div id="ground"></div>
-<div id="house"></div>
-<script>
-  window.requestAnimFrame=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(a){window.setTimeout(a,1E3/60)}}();
-
-var c = document.getElementById('c');
-var ctx = c.getContext('2d');
-var cw = c.width = window.innerWidth;
-var ch = c.height = window.innerHeight*.7;
-var rand = function(a,b){return ~~((Math.random()*(b-a+1))+a);}
-    
-updateAll = function(a){
-  var i = a.length;
-  while(i--){
-    a[i].update(i);  
-  }
-}
-      
-renderAll = function(a){
-  var i = a.length;
-  while(i--){
-    a[i].render(i);  
-  }
-}
-
-var stars = [];
-
-Star = function(x, y, radius, speed){
-  this.x = x;
-  this.y = y;
-  this.speed = (speed/25);
-  this.radius = radius;
-  this.saturation = (20+(this.radius)*5);
-  this.lightness = (8+this.radius*4);
-}
   
-Star.prototype = {
-  update: function(i){
-    this.x += this.speed;
-    if(this.x - this.radius >= cw){
-      this.x = rand(0, ch-this.radius)
-      this.x = -this.radius;
-    }
-},
-render: function(){
-  ctx.beginPath();
-  ctx.arc(this.x, this.y, (this.radius < 0) ? 0 : this.radius, 0, Math.PI *2, false);
-  var flickerAdd = (rand(0, 140) === 0) ? rand(5, 20) : 0;
-  ctx.fillStyle = 'hsl(240, '+this.saturation+'%, '+(this.lightness+flickerAdd)+'%)';
-  ctx.fill();
-  }
-}
-    
-makeStarfield = function(){
-  var base = .75;
-  var inc = .2;
-  var count = 40;
-  var per = 6;
-  while(count--){
-    var radius = base + inc;
-    var perTime = per;
-    while(perTime--){
-    	radius += inc;
-    	stars.push(new Star(rand(0, cw-radius), rand(0, ch-radius), radius, radius*3));
-    }
-  }
-}
-
-var loop = function(){
-  window.requestAnimFrame(loop);
-  updateAll(stars);
-  ctx.clearRect(0, 0, cw, ch);  
-  renderAll(stars);
-}
-    
-makeStarfield();      
-loop();
-</script>
-  </section> <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
   <!--cursor effect-->
   <div class="cursor-dot"></div>
@@ -159,6 +155,7 @@ loop();
 
 <!-- containers for scroll-->
   <section class="section">
+    <div id="target-section"></div>
     <h2 class="h22">Projects</h2>
     <div class="projects-wrapper">
       <!--left button-->
@@ -175,7 +172,7 @@ loop();
         <video class = "simvideo" autoplay muted loop playsinline width="600" height="400">
            <source src="/assets/simvid.mp4" type="video/mp4">
         </video>
-
+          
           <h3 class="cardh3">Fox/Coyote Capture Simulation</h3></br>
           <p class = "pcard">Automated, data-driven wildlife capture method for Sandy Pines Wildlife Centre. Replaced netting with simulation.</p>
 
@@ -276,7 +273,8 @@ loop();
 
 <!-- container 3-->
         <div class="card">
-          <img class = "boldia" src="assets/Baladia.jpeg">
+          <img class = "boldia" src="assets/container3IMG.png">
+          
           <h3 class="cardh3">Dubai Municipality</h3></br><br><br><br>
           <p class = "pcard">3-month internship on traffic diversion plans for multiple projects across Dubai, gaining hands-on experience in traffic management and road safety compliance.</p></br>
           <!--Button copied-->

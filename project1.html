@@ -21,22 +21,29 @@
 
 </div></center><br>
 
- <!-- END CONTACT BUTTONS-->  
-
-      <section class="video-hero">
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="assets/project1vid.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
+ <!-- === PROJECT HERO SECTION (VIDEO DEMO) === -->
+ <section id="section10" class="demo">
+  <!-- Background video -->
+  <video autoplay muted loop id="bgVideo">
+    <source src="assets/project1vid.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
   </video>
 
-  <div class="video-overlay"></div>
+  <!-- Dark overlay -->
+  <div class="overlayHero"></div>
 
-  <div class="video-content">
-    <h1>Simulation Demo</h1>
-    <p>Frontend • Backend • UX</p>
-    <a href="https://www.youtube.com/watch?v=TuIXPZzlma8" class="hero-btn">View My Work</a>
-  </div>
+  <h1>Simulation Demo</h1>
+  <p>Frontend • Backend • UX</p>
+
+  <!-- Scroll link -->
+  <a href="#thanks" ><span></span>Scroll</a>
+
+  <!-- Button to open video link -->
+  <button class="video-btn" onclick="window.open('assets/project3vid.mp4','_blank')">Open Video</button>
 </section>
+  <!-- === PROJECT HERO SECTION (VIDEO DEMO) END === -->
+<br><br><br><br><br><br><br>
+
 
 <br><br><br>
 
@@ -44,6 +51,7 @@
     
     <center>
     <div class="projectinfo">
+      <div id="thanks"></div>
         <h2 class="beforeinfoh2">PROBLEM & GOALS​</h2>
         <div class="image-container">
             <img src="/assets/coolfox.png" class="projectinfo-img" alt="Fox Image">

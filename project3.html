@@ -23,26 +23,36 @@
 
  <!-- END CONTACT BUTTONS-->  
 
-      <section class="video-hero">
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="assets/project3vid.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
+   
+
+<!-- === PROJECT HERO SECTION (VIDEO DEMO) === -->
+ <section id="section10" class="demo">
+  <!-- Background video -->
+  <video autoplay muted loop id="bgVideo">
+    <source src="assets/project3vid.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
   </video>
 
-  <div class="video-overlay"></div>
+  <!-- Dark overlay -->
+  <div class="overlayHero"></div>
 
-  <div class="video-content">
-    <h1>Example Traffic Diversion</h1>
-    <p>Draughting • Planning </p>
-    <a href="https://youtu.be/GhT3hRddMOw" class="hero-btn">View My Work</a>
-  </div>
+  <h1>Example Traffic Diversion</h1>
+  <p>Draughting • Planning </p>
+
+  <!-- Scroll link -->
+  <a href="#thanks" ><span></span>Scroll</a>
+
+  <!-- Button to open video link -->
+  <button class="video-btn" onclick="window.open('assets/project3vid.mp4','_blank')">Open Video</button>
 </section>
-
+  <!-- === PROJECT HERO SECTION (VIDEO DEMO) END === -->
 <br><br><br><br><br><br><br>
+
 
 <!--Project Description-->
 
-<div class="description">
+<div class="description" >
+  <div id="thanks"></div>
 <img class="logos" src="/assets/dubaim.png" style="width: 400px;">
 
 <h2 class="dh2">I spent the summer of my first year in computer engineering as a draughtsman planning traffic<br>
@@ -95,15 +105,15 @@
  <div class="stats-box">
   <div class="stat">
     <h2><span class="count" data-target="10">0</span><span class="suffix"> +</span></h2><br>
-    <p>Completed Projects</p>
+    <p style="color: rgb(73, 73, 73);">Completed Projects</p>
   </div>
   <div class="stat">
     <h2><span class="count" data-target="90">0</span><span class="suffix"> %</span></h2><br>
-    <p>Of Traffic Flow Preserved</p>
+    <p style="color: rgb(73, 73, 73);">Of Traffic Flow Preserved</p>
   </div>
   <div class="stat">
     <h2><span class="count" data-target="24">0</span><span class="suffix"> hr</span></h2><br>
-    <p>Access Maintained</p>
+    <p style="color: rgb(73, 73, 73);">Access Maintained</p>
   </div>
 </div></section>
 

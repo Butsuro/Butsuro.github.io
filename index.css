@@ -1099,3 +1099,73 @@ header {
 .scroll-button:hover {
   color: black;
 }
+
+
+/* === MOBILE OPTIMIZATION === */
+
+/* === MOBILE OPTIMIZATION END === */
+/* === EXTRA MOBILE FIXES === */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 1rem !important;
+    overflow-x: hidden !important;
+  }
+
+  /* hero text doesn’t overflow screen */
+  #heroText {
+    font-size: clamp(32px, 12vw, 64px) !important;
+    top: 40px !important;
+    right: 20px !important;
+    text-align: center !important;
+  }
+
+  #heroSubText {
+    font-size: clamp(14px, 4vw, 20px) !important;
+    top: auto !important;
+    right: auto !important;
+    left: 0;
+    margin-top: 20px;
+    text-align: center !important;
+    position: relative !important;
+    border-right: none !important; /* remove typing bar if too messy */
+    white-space: normal !important; /* wrap text */
+  }
+
+  /* hero gif */
+  .hero-gif {
+    float: none !important;
+    width: 100% !important;
+    margin: 20px auto !important;
+  }
+
+  /* videos/images shrink properly */
+  .simvideo,
+  .boldia,
+  .model-overlay-wrapper {
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 1rem auto !important;
+    float: none !important;
+  }
+
+  /* project cards stack nicely */
+  .card {
+    padding: 20px !important;
+  }
+
+  /* edu box better on small screens */
+  .edu {
+    padding: 20px !important;
+    height: auto !important;
+  }
+
+  /* contact box spacing */
+  .contact-container {
+    padding: 20px !important;
+  }
+
+  /* footer spacing */
+  .footer-container {
+    gap: 15px !important;
+  }
+}

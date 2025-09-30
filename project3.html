@@ -12,16 +12,70 @@
 
 
 
- <!-- CONTACT BUTTONS-->
-<center><div class="navbar">
-  <a class="navButtons" href="index.html">Home</a>
-  <a class="navButtons" href="assets/Resume 62825.pdf" download>Resume</a>
-  <a class="navButtons" href="contact.html" target="_self">Contact</a>
-</div>
-<br>
+ <!-- NAV BAR-->
+<button class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<center>
+  <!-- Navigation Bar -->
+  <div class="navbar" id="navbar">
+    <a class="curnavButton" href="index.html">Home</a>
+    <a class="navButtons" href="assets/Kheireddine Ghettas  Sep 29-2025.pdf" download class="resume-btn">Resume ⭳</a>
+    <a class="navButtons" href="contact.html" target="_self">Contact</a>
+  </div>
 </center>
 
- <!-- END CONTACT BUTTONS-->  
+
+<script>
+// Wait for DOM to load
+window.addEventListener('DOMContentLoaded', function() {
+  console.log('Script loaded'); // Debug line
+  
+  const hamburger = document.getElementById('hamburger');
+  const navbar = document.getElementById('navbar');
+  
+  console.log('Hamburger:', hamburger); // Debug line
+  console.log('Navbar:', navbar); // Debug line
+  
+  if (!hamburger || !navbar) {
+    console.error('Hamburger or navbar not found!');
+    return;
+  }
+  
+  // Toggle menu when hamburger is clicked
+  hamburger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    console.log('Hamburger clicked'); // Debug line
+    hamburger.classList.toggle('active');
+    navbar.classList.toggle('active');
+  });
+  
+  // Close menu when clicking nav links
+  const navButtons = navbar.querySelectorAll('a');
+  navButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      console.log('Nav link clicked'); // Debug line
+      hamburger.classList.remove('active');
+      navbar.classList.remove('active');
+    });
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', function(event) {
+    const isClickInsideNav = navbar.contains(event.target);
+    const isClickOnHamburger = hamburger.contains(event.target);
+    
+    if (!isClickInsideNav && !isClickOnHamburger) {
+      hamburger.classList.remove('active');
+      navbar.classList.remove('active');
+    }
+  });
+});
+</script>
+ <!-- END NAV BAR-->
 
    
 
@@ -38,13 +92,13 @@
 
   <h1>Example Traffic Diversion</h1>
   <p>Draughting • Planning </p>
-
+<center>
   <!-- Scroll link -->
   <a href="#thanks" ><span></span>Scroll</a>
 
   <!-- Button to open video link -->
   <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=GhT3hRddMOw','_blank')">Open Video</button>
-</section>
+</section></center>
   <!-- === PROJECT HERO SECTION (VIDEO DEMO) END === -->
 <br><br><br><br><br><br><br>
 

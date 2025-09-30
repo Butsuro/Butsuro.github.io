@@ -12,103 +12,143 @@
 
 
 
- <!-- CONTACT BUTTONS-->
-<center><div class = "navbar">
+ <body>
 
-<a class = "navButtons" href = "index.html">Home</button>
-<a class = "navButtons" href="assets/Resume 62825.pdf" download class="resume-btn">Resume</a></button>
-<a class = "navButtons"  href = "contact.html" target="_self" >Contact</a>
+ <!-- NAV BAR-->
+<button class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
 
-</div></center><br>
-
- <!-- === PROJECT HERO SECTION (VIDEO DEMO) === -->
- <section id="section10" class="demo">
-  <!-- Background video -->
-  <video autoplay muted loop id="bgVideo">
-    <source src="assets/project1vid.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
-
-  <!-- Dark overlay -->
-  <div class="overlayHero"></div>
-
-  <h1>Simulation Demo</h1>
-  <p>Frontend • Backend • UX</p>
-
-  <!-- Scroll link -->
-  <a href="#thanks" ><span></span>Scroll</a>
-
-  <!-- Button to open video link -->
-  <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=TuIXPZzlma8','_blank')">Open Video</button>
-</section>
-  <!-- === PROJECT HERO SECTION (VIDEO DEMO) END === -->
-<br><br><br><br><br><br><br>
-
-
-<br><br><br>
-
-
-    
-    <center>
-    <div class="projectinfo">
-      <div id="thanks"></div>
-        <h2 class="beforeinfoh2">PROBLEM & GOALS​</h2>
-        <div class="image-container">
-            <img src="/assets/coolfox.png" class="projectinfo-img" alt="Fox Image">
-            <div class="img-text">✧ KHEIREDDINE</div>
-        </div>
-       <div class="projectinfo2">
-       <br><h2 class="projectinfo-h1">Sandy Pines Wildlife Centre Struggles to:​</h2>
-        <br>
-        <ul class="projectinfo-bp"> 
-            <li>Locate potential canid locations​.</li><br>
-            <li>Capture rehabilitated canids.</li>
-        </ul>
-        <br><h2 class="projectinfo-h1">Computer Simulation Goals:</h2>
-        <br>
-        <ul class="projectinfo-bp"> 
-            <li>Models animal behaviour.​​</li><br>
-            <li>Optimizes trap placement.</li>
-        </ul>
-        </div>
-    </div>
-    <!--Upside down triangle -->
-
-<div class="info-section-wrapper">
-  <div class="triangle-down"></div>
-
-  <div class="infocard-container">
-    <div class="infocard">
-      <h2 class="infocard-h1">Requirements:</h2><br><br>
-      <ul class="infocard-bp">
-        <li>Within the <span class="highlight counter" data-target="10000" data-prefix="$" data-speed="70">0</span> implementation budget.</li><br><br>
-        <li>Adapt to pre-existing structures in the environment.</li>
-      </ul>
-    </div>
-
-    <div class="infocard">
-      <h2 class="infocard-h1">Success Criteria:</h2><br><br>
-      <ul class="infocard-bp">
-        <li><span class="highlight counter" data-target="80" data-suffix="%" data-speed="3000">0</span> successful when applied to real-life scenarios</li><br>
-        <li><span class="highlight counter" data-target="80" data-suffix="%" data-speed="3000">0</span> approval rate when used by Sandy Pines Staff</li><br>
-        <li>Changes trap location recommendation based on different inputs</li>
-      </ul>
-    </div>
+<center>
+  <!-- Navigation Bar -->
+  <div class="navbar" id="navbar">
+    <a class="curnavButton" href="index.html">Home</a>
+    <a class="navButtons" href="assets/Kheireddine Ghettas  Sep 29-2025.pdf" download class="resume-btn">Resume ⭳</a>
+    <a class="navButtons" href="contact.html" target="_self">Contact</a>
   </div>
-</div>
+</center>
+
+<script>
+// Wait for DOM to load
+window.addEventListener('DOMContentLoaded', function() {
+  console.log('Script loaded'); // Debug line
+  
+  const hamburger = document.getElementById('hamburger');
+  const navbar = document.getElementById('navbar');
+  
+  console.log('Hamburger:', hamburger); // Debug line
+  console.log('Navbar:', navbar); // Debug line
+  
+  if (!hamburger || !navbar) {
+    console.error('Hamburger or navbar not found!');
+    return;
+  }
+  
+  // Toggle menu when hamburger is clicked
+  hamburger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    console.log('Hamburger clicked'); // Debug line
+    hamburger.classList.toggle('active');
+    navbar.classList.toggle('active');
+  });
+  
+  // Close menu when clicking nav links
+  const navButtons = navbar.querySelectorAll('a');
+  navButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      console.log('Nav link clicked'); // Debug line
+      hamburger.classList.remove('active');
+      navbar.classList.remove('active');
+    });
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', function(event) {
+    const isClickInsideNav = navbar.contains(event.target);
+    const isClickOnHamburger = hamburger.contains(event.target);
     
-    </center><br><br><br>
+    if (!isClickInsideNav && !isClickOnHamburger) {
+      hamburger.classList.remove('active');
+      navbar.classList.remove('active');
+    }
+  });
+});
+</script><center>
+ <!-- END NAV BAR-->
 
+  <!-- HERO SECTION WITH VIDEO -->
+  <section class="demo" aria-label="Project hero section">
+    <video autoplay muted loop id="bgVideo" aria-hidden="true">
+      <source src="assets/project1vid.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
 
+    <div class="overlayHero" aria-hidden="true"></div>
 
+    <h1>Simulation Demo</h1>
+    <p>Frontend • Backend • UX</p>
 
+    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=TuIXPZzlma8','_blank')" aria-label="Open full video on YouTube">
+      Open Video
+    </button>
+
+    <a href="#project-info" class="scroll-indicator" aria-label="Scroll to project information">
+      <span aria-hidden="true"></span>
+      Scroll
+    </a>
+  </section>
+
+  <!-- PROJECT INFO SECTION -->
+  <section id="project-info" class="project-section">
+    <h2 class="section-header">PROBLEM & GOALS</h2>
     
+    <div class="projectinfo">
+      <div class="image-container">
+        <img src="assets/coolfox.png" class="projectinfo-img" alt="Wildlife illustration">
+        <div class="img-text" aria-hidden="true">✧ KHEIREDDINE</div>
+      </div>
+      
+      <div class="projectinfo2">
+        <h3 class="projectinfo-h1">Sandy Pines Wildlife Centre Struggles to:</h3>
+        <ul class="projectinfo-bp">
+          <li>Locate potential canid locations</li>
+          <li>Capture rehabilitated canids</li>
+        </ul>
+        
+        <h3 class="projectinfo-h1">Computer Simulation Goals:</h3>
+        <ul class="projectinfo-bp">
+          <li>Models animal behaviour</li>
+          <li>Optimizes trap placement</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<script src="project1.js"></script>
+  <!-- INFO CARDS SECTION -->
+  <section class="info-section-wrapper" aria-label="Project details">
+    <div class="infocard-container">
+      <article class="infocard">
+        <h3 class="infocard-h1">Requirements:</h3>
+        <ul class="infocard-bp">
+          <li>Within the <span class="highlight">$10,000</span> implementation budget</li>
+          <li>Adapt to pre-existing structures in the environment</li>
+        </ul>
+      </article>
 
-</body><br><br><br><br><br><br><br><br><br><br><br><br>
+      <article class="infocard">
+        <h3 class="infocard-h1">Success Criteria:</h3>
+        <ul class="infocard-bp">
+          <li><span class="highlight">80%</span> successful when applied to real-life scenarios</li>
+          <li><span class="highlight">80%</span> approval rate when used by Sandy Pines Staff</li>
+          <li>Changes trap location recommendation based on different inputs</li>
+        </ul>
+      </article>
+    </div>
+  </section>
 
-
+  <!-- ===FOOTER=== -->
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-brand">
@@ -119,36 +159,34 @@
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="contact.html">Contact</a>
-      <a href="assets/Resume 62825.pdf" download>Resume</a>
+      <a href="assets/Kheireddine Ghettas  Sep 29-2025.pdf" download>Resume ⭳</a>
     </div>
 
     <div class="footer-social">
       <a href="https://github.com/yourusername" target=""><i class="fab fa-github"></i></a>
       <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+      <a href="mailto:ghettaskheireddine@email.com"><i class="fas fa-envelope"></i></a>
     </div>
   </div>
   <div class="footer-bottom">
     <p>&copy; 2025 Kheireddine Ghettas. All rights reserved.</p>
   </div>
 </footer>
-
-<!-- Font Awesome CDN -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- ===END OF FOOTER=== -->
 
 
- <!--cursor effect-->
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
 
   <script>
-   const dot = document.querySelector(".cursor-dot");
+    // Custom cursor effect
+    const dot = document.querySelector(".cursor-dot");
     const ring = document.querySelector(".cursor-ring");
 
     let mouseX = 0, mouseY = 0;
     let ringX = 0, ringY = 0;
 
-    // Follow mouse instantly (dot)
     document.addEventListener("mousemove", e => {
       mouseX = e.clientX;
       mouseY = e.clientY;
@@ -156,7 +194,6 @@
       dot.style.left = mouseX + "px";
     });
 
-    // Smooth trailing (ring)
     function animate() {
       ringX += (mouseX - ringX) * 0.15;
       ringY += (mouseY - ringY) * 0.15;
@@ -166,20 +203,17 @@
     }
     animate();
 
-    // Hover detection
     document.addEventListener("mouseover", e => {
-      if (e.target.closest("a, button, .clickable, input, textarea, select, label")) {
+      if (e.target.closest("a, button, input, textarea, select, label")) {
         dot.classList.add("hover");
         ring.classList.add("hover");
       }
     });
+
     document.addEventListener("mouseout", e => {
       dot.classList.remove("hover");
       ring.classList.remove("hover");
     });
   </script>
-  <!--cursor effect END-->
-
+</body>
 </html>
-
-<!-- LOADING SCREEN -->
